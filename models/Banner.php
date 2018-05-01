@@ -1,25 +1,25 @@
 <?php
 
-namespace kouosl\notification\models;
+namespace kouosl\banner\models;
 
 use Yii;
 
 /**
- * This is the model class for table "notification".
+ * This is the model class for table "banner".
  *
  * @property int $id
  * @property string $title
  * @property string $description
  * @property string $date
  */
-class Notification extends \yii\db\ActiveRecord
+class Banner extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'notification';
+        return 'banner';
     }
 
     /**

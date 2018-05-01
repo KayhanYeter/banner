@@ -12,8 +12,8 @@ $form = ActiveForm::begin([
     'id' => 'login-form',
     'options' => ['class' => 'form-horizontal'],
 ]) ?>
-    <?= $form->field($notification, 'title') ?>
-    <?= $form->field($notification, 'date') ?>
+    <?= $form->field($banner, 'title') ?>
+    <?= $form->field($banner, 'date') ?>
 
     <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">

@@ -1,13 +1,13 @@
 <?php
 
-namespace kouosl\notification\controllers\api;
+namespace kouosl\banner\controllers\api;
 
-use kouosl\notification\models\Notification;
+use kouosl\banner\models\Banner;
 use Yii;
 
-class NotificationController extends DefaultController {
+class BannerController extends DefaultController {
 	
-	public $modelClass = 'kouosl\notification\models\Notification';
+	public $modelClass = 'kouosl\banner\models\Banner';
 	
 	public function actions() {
 		$actions = parent::actions ();
@@ -17,7 +17,7 @@ class NotificationController extends DefaultController {
 	
 	public function actionView($id){
 
-		$model = Notification::findOne($id);
+		$model = Banner::findOne($id);
 		
 		if(!$model)
 			return ['status' => '404','message' => 'Not Found'];
@@ -26,14 +26,14 @@ class NotificationController extends DefaultController {
 	}
 	
 	public function actionIndex(){
-		return Notification::find()->all();
+		return Banner::find()->all();
 	}
 	
 	public function actionCreate(){
 
 		$postParams = yii::$app->request->post();
 		
-		$model = new Notification();
+		$model = new Banner();
 	
 		
 		if($model->load($postParams,'') && $model->validate()){
@@ -51,7 +51,7 @@ class NotificationController extends DefaultController {
 
 		$postParams = yii::$app->request->post();
 		
-		$model = Notification::findOne($id);
+		$model = Banner::findOne($id);
 
 		if($model = $this->LoadModel($model, $postParams)){
 				if($model->save())
@@ -64,7 +64,7 @@ class NotificationController extends DefaultController {
 	
 	public function actionDelete($id){
 		
-		if(Notification::findOne($id)->delete())
+		if(Banner::findOne($id)->delete())
 			return ['status' => 1];
 		else
 			return ['stauts' => 100];

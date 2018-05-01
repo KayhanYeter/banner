@@ -1,15 +1,15 @@
 <?php
 
-namespace kouosl\notification\models;
+namespace kouosl\banner\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * NotificationSearch represents the model behind the search form about `app\modules\notification\models\Notification`.
+ * BannerSearch represents the model behind the search form about `app\modules\banner\models\Banner`.
  */
-class NotificationSearch extends Notification
+class BannerSearch extends Banner
 {
     /**
      * @inheritdoc
@@ -40,7 +40,7 @@ class NotificationSearch extends Notification
      */
     public function search($params)
     {
-        $query = notification::find();
+        $query = banner::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

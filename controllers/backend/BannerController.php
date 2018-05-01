@@ -1,12 +1,12 @@
 <?php
 
-namespace kouosl\notification\controllers\backend;
+namespace kouosl\banner\controllers\backend;
 
-use kouosl\notification\models\NotificationData;
-use kouosl\notification\models\UploadImage;
+use kouosl\banner\models\BannerData;
+use kouosl\banner\models\UploadImage;
 use Yii;
-use kouosl\notification\models\Notification;
-use kouosl\notification\models\NotificationSearch;
+use kouosl\banner\models\Banner;
+use kouosl\banner\models\BannerSearch;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UnauthorizedHttpException;
@@ -15,9 +15,9 @@ use yii\web\UploadedFile;
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
 /**
- * NotificationController implements the CRUD actions for Notification model.
+ * BannerController implements the CRUD actions for Banner model.
  */
-class NotificationController extends DefaultController
+class BannerController extends DefaultController
 {
     public function behaviors()
     {
@@ -46,14 +46,14 @@ class NotificationController extends DefaultController
     	parent::init();
     }
 
-    public function actionNotification(){
+    public function actionBanner(){
         $provider = new ActiveDataProvider([
-            'query' => Notification::find(),
+            'query' => Banner::find(),
             'pagination' => [
                 'pagesize' => 2,
             ],
         ]);
-        return $this->render('_notification', [
+        return $this->render('_banner', [
             'dataProvider' => $provider,
         ]);
     }
@@ -63,7 +63,7 @@ class NotificationController extends DefaultController
     }
 
     /**
-     * Lists all Notification models.
+     * Lists all Banner models.
      * @return mixed
      */
     public function actionManage()
@@ -71,7 +71,7 @@ class NotificationController extends DefaultController
     	
 
     	
-        $searchModel = new NotificationSearch();
+        $searchModel = new BannerSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('_manage', [
@@ -81,7 +81,7 @@ class NotificationController extends DefaultController
     }
 
     /**
-     * Displays a single Notification model.
+     * Displays a single Banner model.
      * @param integer $id
      * @return mixed
      */
@@ -95,7 +95,7 @@ class NotificationController extends DefaultController
     }
 
     /**
-     * Creates a new Notification model.
+     * Creates a new Banner model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
@@ -103,7 +103,7 @@ class NotificationController extends DefaultController
     {
 
     	
-        $model = new Notification();
+        $model = new Banner();
 
         $uploadImage = new UploadImage();
 
@@ -115,7 +115,7 @@ class NotificationController extends DefaultController
 
             if(!$model->save()){
 
-                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('notification', 'Notification Not Saved' )]);
+                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('banner', 'Banner Not Saved' )]);
 
                 return $this->render('_create', ['model' => $model]); // error
             }
@@ -132,7 +132,7 @@ class NotificationController extends DefaultController
     }
 
     /**
-     * Updates an existing Notification model.
+     * Updates an existing Banner model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -156,7 +156,7 @@ class NotificationController extends DefaultController
 
             if(!$model->save()){
 
-                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('notification', 'Notification Not Saved' )]);
+                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('banner', 'Banner Not Saved' )]);
 
                 return $this->render('_update', ['model' => $model]); // error
             }
@@ -173,7 +173,7 @@ class NotificationController extends DefaultController
     }
 
     /**
-     * Deletes an existing Notification model.
+     * Deletes an existing Banner model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -181,7 +181,7 @@ class NotificationController extends DefaultController
     public function actionDelete($id)
     {
 
-        NotificationData::deleteAll(['notification_id' => $id]);
+        BannerData::deleteAll(['banner_id' => $id]);
 
         $model = $this->findModel($id);
 
@@ -196,15 +196,15 @@ class NotificationController extends DefaultController
     }
 
     /**
-     * Finds the Notification model based on its primary key value.
+     * Finds the Banner model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Notification the loaded model
+     * @return Banner the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Notification::findOne($id)) !== null) {
+        if (($model = Banner::findOne($id)) !== null) {
 
             return $model;
 

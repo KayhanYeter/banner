@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\notification\controllers\frontend;
+namespace kouosl\banner\controllers\frontend;
 
 
 class DefaultController extends \kouosl\base\controllers\backend\BaseController

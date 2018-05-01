@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\notification;
+namespace kouosl\banner;
 use Yii;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\HttpBasicAuth;
@@ -57,16 +57,16 @@ class Module extends \kouosl\base\Module
         Yii::$app->i18n->translations['site/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@kouosl/notification/messages',
+            'basePath' => '@kouosl/banner/messages',
             'fileMap' => [
-                'notification/notification' => 'notification.php',
+                'banner/banner' => 'banner.php',
             ],
         ];
     }
 
     public static function t($category, $message, $params = [], $language = null)
     {
-        return Yii::t('notification/' . $category, $message, $params, $language);
+        return Yii::t('banner/' . $category, $message, $params, $language);
     }
 
     public static function initRules(){
@@ -75,7 +75,7 @@ class Module extends \kouosl\base\Module
             [
                 'class' => 'yii\rest\UrlRule',
                 'controller' => [
-                    'notification/notifications',
+                    'banner/banners',
                 ],
                 'tokens' => [
                     '{id}' => '<id:\\w+>'

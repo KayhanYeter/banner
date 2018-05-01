@@ -1,17 +1,17 @@
 <?php
 
-namespace kouosl\notification\controllers\backend;
+namespace kouosl\banner\controllers\backend;
 
-use kouosl\notification\models\SLider;
+use kouosl\banner\models\SLider;
 
 class DefaultController extends \kouosl\base\controllers\backend\BaseController
 {
     
     public function actionIndex()
     {
-        $notification = new Notification();
+        $banner = new Banner();
         return $this->render('index', [
-            'notification' => $notification,
+            'banner' => $banner,
         ]);
     }
 }

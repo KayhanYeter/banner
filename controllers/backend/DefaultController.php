@@ -1,17 +1,17 @@
 <?php
 
-namespace kouosl\gallery\controllers\backend;
+namespace kouosl\notification\controllers\backend;
 
-use kouosl\gallery\models\SLider;
+use kouosl\notification\models\SLider;
 
 class DefaultController extends \kouosl\base\controllers\backend\BaseController
 {
     
     public function actionIndex()
     {
-        $gallery = new Gallery();
+        $notification = new Notification();
         return $this->render('index', [
-            'gallery' => $gallery,
+            'notification' => $notification,
         ]);
     }
 }

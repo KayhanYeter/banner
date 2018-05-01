@@ -1,15 +1,15 @@
 <?php
 
-namespace kouosl\gallery\models;
+namespace kouosl\notification\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * GallerySearch represents the model behind the search form about `app\modules\gallery\models\Gallery`.
+ * NotificationSearch represents the model behind the search form about `app\modules\notification\models\Notification`.
  */
-class GallerySearch extends Gallery
+class NotificationSearch extends Notification
 {
     /**
      * @inheritdoc
@@ -40,7 +40,7 @@ class GallerySearch extends Gallery
      */
     public function search($params)
     {
-        $query = gallery::find();
+        $query = notification::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

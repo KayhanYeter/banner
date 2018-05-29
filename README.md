@@ -18,3 +18,7 @@ yapıştırın. Daha sonra proje klasörünün olduğu dizinde bir komut satır�
 php yii migrate
 
 komutu ile veri tabanını oluşturun.
+
+
+## Banner Oluşturma
+http://portal.kouosl/admin/banner/banner/index sayfasından Create Banner butonuna tıklayarak açılan sayfadan yeni bir banner oluşturulabilir. Daha sonra view kısmından banner içerik sayfasına gidilip oradan yeni banner eklenebilir. Bu kısımda update ve delete işlemi de yapabilirsiniz.

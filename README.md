@@ -3,19 +3,19 @@
 Kurulum
 Projenizin ana klasörünün altında bulunan composer.json adlı dosyayı açın. repositories kısmına
 
-{
+> {
 
-  "type": "vcs",
+>  "type": "vcs",
 
-  "url": "https://github.com/KayhanYeter/banner"
+>  "url": "https://github.com/KayhanYeter/banner"
 
-}
+> }
 
 require kısmına
-"{Proje ismi}/evet": "dev-master"
+> "{Proje ismi}/evet": "dev-master"
 yapıştırın. Daha sonra proje klasörünün olduğu dizinde bir komut satırı açın.
 
-  php yii migrate --migrationPath=@vendor/kouosl/banner/migrations --interactive=0
+>  php yii migrate --migrationPath=@vendor/kouosl/banner/migrations --interactive=0
 
 komutu ile veri tabanını oluşturun.
 
